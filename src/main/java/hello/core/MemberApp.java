@@ -3,11 +3,13 @@ package hello.core;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
-import hello.core.member.MemberServiceImpl;
 
-public class MemberAPp {
+public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl(memberRepository);
+        AppConfig appconfig = new AppConfig();
+        MemberService memberService = appconfig.memberService(); //appconfig를 통해 선언
+        //MemberService memberService = new MemberServiceImpl(memberRepository);
+
         Member member = new Member(1L,"memberA", Grade.VIP);
         memberService.join(member);
 
