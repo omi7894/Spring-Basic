@@ -1,5 +1,5 @@
 # Spring-Basic
-:sparkles:인프런 김영한 스프링핵심원리기본편
+✨인프런 김영한 스프링핵심원리기본편
 
 #### 예제만들기
 - member
@@ -32,10 +32,10 @@
 //sout(order.calculatePrice())
 ```
 
-=> DIP위반 왜?? OrderServiceImpl이 DiscountPolicy만 의존하는게 아니라, FixDiscountPolicy와 RateDiscountPolicy에도 의존한다. 
-	private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-	-> 추상에만(인터페이스에만) 의존하도록 변경
+🚨**DIP위반** 왜?? OrderServiceImpl이 DiscountPolicy만 의존하는게 아니라, FixDiscountPolicy와 RateDiscountPolicy에도 의존한다.   
+> private final DiscountPolicy discountPolicy = new FixDiscountPolicy();  
+	> private final DiscountPolicy discountPolicy = new RateDiscountPolicy();  
+	> -> 추상에만(인터페이스에만) 의존하도록 변경  
 	
 	
 [AppConfig 등장]
