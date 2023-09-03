@@ -5,11 +5,9 @@ import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 
-import java.sql.SQLOutput;
-
 public class MemberAPp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = new MemberServiceImpl(memberRepository);
         Member member = new Member(1L,"memberA", Grade.VIP);
         memberService.join(member);
 
