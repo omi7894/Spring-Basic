@@ -58,4 +58,30 @@ MemberServiceImplc, OrderServiceImpl에서는 인터페이스만 접근하고(me
 **✅OCP**  
 소프트웨어 요소는 확장에는 열려 있으나 변경에는 닫혀 있어야 한다. 
 
+<br/>
 
+- IoC 
+	- 제어의 역전
+	- 프로그램 제어 흐름은 AppConfig가 가져간다.
+
+- DI
+	- 의존관계 주입
+	1. 정적인 클래스 의존관계
+	2. 동적인 객체 인스턴스 의존관계
+
+<br/>
+
+### 스프링 컨테이너와 스프링 
+
+**@Configuration**  
+구성정보(AppConfig)에 붙여준다.
+
+**@Bean**  
+스프링 컨테이너에 등록이 된다. 
+
+**[스프링컨테이너]**
+- ApplicationContext를 스프링 컨테이너라 한다. 
+- ApplicationContext는 인터페이스다. 
+- @Configuration이 붙은 AppConfig를 설정 정보로 사용한다.
+- @Bean이 붙은 메서드를 호출해서 스프링 컨테이너에 등록한다. 
+- 스프링 빈은 applicationContext.getBeam()메서드를 사용해서 찾을 수 있다. 
