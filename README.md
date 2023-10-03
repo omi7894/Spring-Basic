@@ -84,4 +84,33 @@ MemberServiceImplc, OrderServiceImpl에서는 인터페이스만 접근하고(me
 - ApplicationContext는 인터페이스다. 
 - @Configuration이 붙은 AppConfig를 설정 정보로 사용한다.
 - @Bean이 붙은 메서드를 호출해서 스프링 컨테이너에 등록한다. 
-- 스프링 빈은 applicationContext.getBeam()메서드를 사용해서 찾을 수 있다. 
+- 스프링 빈은 applicationContext.getBean()메서드를 사용해서 찾을 수 있다.
+
+ **BeanFactory**
+- 스프링 컨테이너의 최상위 인터페이스
+- 스프링 빈을 관리하고 조회
+
+**ApplicationContext**
+- BeanFactory의 기능을 상속받아 제공
+- 부가기능 갖고있음
+
+**BeanDefinition**
+- 스프링 빈 설정 메타 정보
+
+<br/>
+
+### 싱글톤
+스프링 없는 순수한 DI 컨테이너인 AppConfig는 요청할 때 마다 객체를 새로 생성한다. 
+
+싱글톤 패턴 : 생성자를 private로 막아서 외부에서 객체가 생성된는것을 막는다. 
+
+싱글톤 패턴은 귀찮고 문제가 있기 때문에 싱글톤 컨테이너를 사용한다!!
+
+싱글톤 방식은 무상태로 설계해야 한다!!  
+ex)가격실수
+
+@Bean이 붙은 메서드마다 이미 스프링 빈이 존재하면 존재하는 빈을 반환하고, 스프링 빈이 없으면 생성해서 스프링 빈으로 등록한다.  
+-> 싱글톤 보장  
+-> @Configuration 없이 @Bean만 사용하면 싱글톤을 보장하지 않는다. 
+
+
